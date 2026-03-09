@@ -3,9 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Naranbat Enkhbold 78577</title>
+
+    <style>
+        
+
+    </style>
 </head>
 <body>
-    
+
+    <section id="bigSection">
+        <h2>Background Colour: <span id="boxDisplay">#FFFFFF</span></h2>
+        <button id="btn-colour">Click me</button>
+    </section>
+
+    <script>
+        const btnChangeColour = document.getElementById('btn-colour');
+        const boxColour = document.getElementById('boxDisplay');
+        const section = document.querySelector('#bigSection');
+
+        const arrHex = [0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F'];
+
+        function getRandomNumber(max) {
+            return Math.floor(Math.random() * max);
+        }
+
+        btnChangeColour.addEventListener('click', () => {
+            let strHexColour = '#';
+
+            for (let i = 0; i < 6; i++) {
+                strHexColour += arrHex[getRandomNumber(arrHex.length)];
+            }
+
+            section.style.backgroundColor = strHexColour;
+            boxColour.innerText = strHexColour;
+        });
+    </script>
 </body>
 </html>
